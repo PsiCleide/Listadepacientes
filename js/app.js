@@ -284,7 +284,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         const csvString = csvRows.join("\n");
-        const blob = new Blob([csvString], { type: "text/csv;charset=utf-8;" });
+        // Adiciona o BOM para UTF-8
+        const BOM = "\uFEFF";
+        const blob = new Blob([BOM + csvString], { type: "text/csv;charset=utf-8;" });
         const url = URL.createObjectURL(blob);
         const a = document.createElement("a");
         a.href = url;
@@ -338,24 +340,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Helper functions for formatting
     function formatCpf(cpf) {
-        cpf = String(cpf).padStart(11, '0');
+        cpf = String(cpf).replace(/\D/g, ""); // Remove all non-digits
+        cpf = cpf.padStart(11, '0'); // Ensure 11 digits, pad with 0s if less
         return cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
     }
 
     function formatPhone(phone) {
-        phone = String(phone).padStart(11, '0');
+        phone = String(phone).replace(/\D/g, ""); // Remove all non-digits
         if (phone.length === 11) {
-            return phone.replace(/(\d{2})(\d{5})(\d{4})/, "($1) $2-$4");
+            return phone.replace(/(\d{2})(\d{5})(\d{4})/, "($1) $2-$3");
         } else if (phone.length === 10) {
-            return phone.replace(/(\d{2})(\d{4})(\d{4})/, "($1) $2-$4");
+            return phone.replace(/(\d{2})(\d{4})(\d{4})/, "($1) $2-$3");
         }
         return phone; // Return as is if not 10 or 11 digits
-    }
-
-    function formatDate(dateString) {
-        if (!dateString) return "";
-        const [year, month, day] = dateString.split("-");
-        return `${day}/${month}/${year}`;
     }
 
     // Input masks
@@ -376,5 +373,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         e.target.value = value;
     });
+
+    function formatDate(dateString) {
+        if (!dateString) return "";
+        const [year, month, day] = dateString.split("-");
+        return `${day}/${month}/${year}`;
+    }
 });
 
