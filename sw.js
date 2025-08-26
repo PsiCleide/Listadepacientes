@@ -1,12 +1,12 @@
 const CACHE_NAME = 'controle-pacientes-v1';
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/css/style.css',
-  '/js/app.js',
-  '/manifest.json',
-  '/icons/icon-192x192.png',
-  '/icons/icon-512x512.png'
+  '/Listadepacientes/',
+  '/Listadepacientes/index.html',
+  '/Listadepacientes/css/style.css',
+  '/Listadepacientes/js/app.js',
+  '/Listadepacientes/manifest.json',
+  '/Listadepacientes/icons/icon-192x192.png',
+  '/Listadepacientes/icons/icon-512x512.png'
 ];
 
 // Instalar o service worker
@@ -49,4 +49,3 @@ self.addEventListener('activate', function(event) {
     })
   );
 });
-

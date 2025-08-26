@@ -2,12 +2,12 @@
   "name": "Controle de Pacientes",
   "short_name": "Pacientes",
   "description": "Sistema de controle de pacientes para psicólogos",
-  "start_url": "/",
+  "start_url": "/Listadepacientes/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#4f46e5",
   "orientation": "portrait-primary",
-  "scope": "/",
+  "scope": "/Listadepacientes/",
   "icons": [
     {
       "src": "icons/icon-72x72.png",
@@ -61,4 +61,3 @@
   "categories": ["medical", "productivity", "business"],
   "lang": "pt-BR"
 }
-
