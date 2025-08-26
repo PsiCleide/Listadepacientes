@@ -44,17 +44,17 @@
         <nav class="nav">
             <div class="container">
                 <div class="nav-tabs">
-                    <button class="nav-tab active" data-tab="dashboard">
-                        <i class="fas fa-chart-pie"></i>
-                        Dashboard
-                    </button>
-                    <button class="nav-tab" data-tab="patients">
+                    <button class="nav-tab active" data-tab="patients">
                         <i class="fas fa-users"></i>
                         Pacientes
                     </button>
                     <button class="nav-tab" data-tab="add-patient">
                         <i class="fas fa-user-plus"></i>
                         Adicionar
+                    </button>
+                    <button class="nav-tab" data-tab="dashboard">
+                        <i class="fas fa-chart-pie"></i>
+                        Dashboard
                     </button>
                 </div>
             </div>
@@ -63,51 +63,8 @@
         <!-- Main Content -->
         <main class="main">
             <div class="container">
-                <!-- Dashboard Tab -->
-                <div class="tab-content active" id="dashboard">
-                    <div class="dashboard">
-                        <h2>Dashboard</h2>
-                        <div class="stats-grid">
-                            <div class="stat-card">
-                                <div class="stat-icon">
-                                    <i class="fas fa-users"></i>
-                                </div>
-                                <div class="stat-info">
-                                    <h3 id="totalPatients">0</h3>
-                                    <p>Total de Pacientes</p>
-                                </div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-icon active">
-                                    <i class="fas fa-user-check"></i>
-                                </div>
-                                <div class="stat-info">
-                                    <h3 id="activePatients">0</h3>
-                                    <p>Pacientes Ativos</p>
-                                </div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-icon inactive">
-                                    <i class="fas fa-user-times"></i>
-                                </div>
-                                <div class="stat-info">
-                                    <h3 id="inactivePatients">0</h3>
-                                    <p>Pacientes Inativos</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="dashboard-actions">
-                            <button class="btn btn-primary" id="exportBtn">
-                                <i class="fas fa-file-excel"></i>
-                                Exportar para Excel
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- Patients Tab -->
-                <div class="tab-content" id="patients">
+                <div class="tab-content active" id="patients">
                     <div class="patients-section">
                         <div class="section-header">
                             <h2>Lista de Pacientes</h2>
@@ -189,6 +146,49 @@
                                 </button>
                             </div>
                         </form>
+                    </div>
+                </div>
+
+                <!-- Dashboard Tab -->
+                <div class="tab-content" id="dashboard">
+                    <div class="dashboard">
+                        <h2>Dashboard</h2>
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3 id="totalPatients">0</h3>
+                                    <p>Total de Pacientes</p>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon active">
+                                    <i class="fas fa-user-check"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3 id="activePatients">0</h3>
+                                    <p>Pacientes Ativos</p>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon inactive">
+                                    <i class="fas fa-user-times"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3 id="inactivePatients">0</h3>
+                                    <p>Pacientes Inativos</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="dashboard-actions">
+                            <button class="btn btn-primary" id="exportBtn">
+                                <i class="fas fa-file-excel"></i>
+                                Exportar para Excel
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
